@@ -25,7 +25,7 @@ Help()
    echo "-r (default: us-east-1) Region in which instance resides"
    echo "-p (default: None)      Profile for aws ssm session manager"
    echo ""
-   echo "$scriptname: error: the following arguments are required: [-ip | --public-ip || -pip | --private-ip || -id | --instance-id] [-r | --region] [-p | --profile]"
+   echo "Error: the following arguments are required: [-ip | --public-ip || -pip | --private-ip || -id | --instance-id] [-r | --region] [-p | --profile]"
 }
 
 compareable_version() {
