@@ -84,7 +84,12 @@ done
 if [ $operation == "-ip" ] || [ $operation == "--public-ip" ];
 then
     if [[ $opvalue =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-        target=$(aws ec2 describe-instances --filter Name=ip-address,Values="${opvalue}" --query Reservations[].Instances[].InstanceId --output text --region "${region}" --profile "${profile}")
+        target=$(aws ec2 describe-instances \
+                    --filter "Name=ip-address,Values=${opvalue}" \
+                    --query "Reservations[].Instances[].InstanceId" \
+                    --output text \
+                    --region "${region}" \
+                    --profile "${profile}")
     else
         echo "Please enter a valid public ip address syntax. e.g. 55.54.53.52"
         exit 1
@@ -93,7 +98,12 @@ then
 elif [ $operation == "-pip" ] || [ $operation == "--private-ip" ];
 then
     if [[ $opvalue =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-        target=$(aws ec2 describe-instances --filter Name=private-ip-address,Values="${opvalue}" --query Reservations[].Instances[].InstanceId --output text --region "${region}" --profile "${profile}")
+        target=$(aws ec2 describe-instances \
+                    --filter "Name=private-ip-address,Values=${opvalue}" \
+                    --query "Reservations[].Instances[].InstanceId" \
+                    --output text \
+                    --region "${region}" \
+                    --profile "${profile}")
     else
         echo "Please enter a valid private ip address syntax. e.g. 192.168.0.1"
         exit 1

@@ -4,19 +4,19 @@ Wrapper around AWS Session Manager to establish ssh sessions using public ip, pr
 ## Usage
 ```bash
 
-   SSH to instances using SSM Session Manager.
-   usage: ec2-ssh [-ip | --public-ip || -pip | --private-ip || -id | --instance-id] [-r | --region] [-p | --profile]
+SSH to instances using SSM Session Manager.
+usage: ec2-ssh [-ip | --public-ip || -pip | --private-ip || -id | --instance-id] [-r | --region] [-p | --profile]
    
-   To see help text, you can run   
+To see help text, you can run   
    
-   ec2-ssh [-h | --help]  Help for running this script.
+ec2-ssh [-h | --help]  Help for running this script.
    
-   required flags:
-   -ip || -pip || id       IP Address, Private IP or Instance ID of the instance to do SSH
-   -r (default: us-east-1) Region in which instance resides
-   -p (default: None)      Profile for aws ssm session manager
+required flags:
+  -ip || -pip || id       IP Address, Private IP or Instance ID of the instance to do SSH
+  -r (default: us-east-1) Region in which instance resides
+  -p (default: None)      Profile for aws ssm session manager
    
-   ec2-ssh: error: the following arguments are required: [-ip | --public-ip || -pip | --private-ip || -id | --instance-id] [-r | --region] [-p | --profile]
+ec2-ssh: error: the following arguments are required: [-ip | --public-ip || -pip | --private-ip || -id | --instance-id] [-r | --region] [-p | --profile]
 ```
 
 ## Example Usage
