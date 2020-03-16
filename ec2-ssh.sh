@@ -37,14 +37,14 @@ minimum_aws_cli_version=1.16.299
 current_aws_cli_version=$(aws --version 2>&1 | awk '{split($1,array,"/")} END {print array[2]}')
 
 if [ "$(compareable_version "${current_aws_cli_version}")" -lt "$(compareable_version "${minimum_aws_cli_version}")" ]; then
-  echo "Error: AWS CLI version must be greater than ${minimum_aws_cli_version}. Please update your aws cli (pip install awscli --upgrade)"
+  echo "Error: AWS CLI version must be greater than ${minimum_aws_cli_version}. Please update your aws cli (pip install awscli --upgrade or brew upgrade awscli)"
   exit 1
 fi
 
 # checking if session manager plugin exists
 if [ ! -e /usr/local/bin/session-manager-plugin ]; then
-  echo "AWS SessionManagerPlugin is not found - installing"
-  echo "See the AWS Session Manager Plugin Docs for more information: http://docs.aws.amazon.com/console/systems-manager/session-manager-plugin-not-found"
+  echo "AWS SessionManagerPlugin is not found"
+  echo "See the AWS Session Manager Plugin Docs for Installation: https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html"
   exit 1
 fi
 
