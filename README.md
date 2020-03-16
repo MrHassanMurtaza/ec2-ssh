@@ -39,6 +39,9 @@ ec2-ssh: error: the following arguments are required: [-ip | --public-ip || -pip
 * Short using Instance ID:
 `ec2-ssh -p=<your_aws_profile> -r=<ec2_aws_region> -id=<instance_id_for_instance>`
 
+### Pro-Tip :100:
+* Move the script to `/usr/local/bin` or any path which is in global PATH variable so that you can use `ec2-ssh` instead of giving absolute path.
+
 ## Prerequisites
 
 * AWS CLI version 1.16.299 or higher
